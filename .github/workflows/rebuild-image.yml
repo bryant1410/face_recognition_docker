@@ -1,0 +1,9 @@
+name: Rebuild Image
+on:
+  schedule:
+    - cron: '0 0 * * 0'  # Every week
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - run: curl -X POST ${{ secrets.TRIGGER_URL }}
