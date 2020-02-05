@@ -7,7 +7,7 @@ Run [face_recognition](https://github.com/ageitgey/face_recognition) on GPU easi
 To run on GPU you need a computer with a CUDA-capable GPU and the NVIDIA driver >= 418.39 (because it uses CUDA 10.1;
 see the
 [CUDA Toolkit and Compatible Driver Versions table](https://docs.nvidia.com/deploy/cuda-compatibility/index.html#binary-compatibility__table-toolkit-driver)
-for more information). Otherwise, you can run on CPU.
+for more information). Otherwise, you can run on the CPU.
 
 You also need a camera connected to the computer. Otherwise, you can run other scripts within the container.
 
@@ -16,7 +16,6 @@ You also need a camera connected to the computer. Otherwise, you can run other s
 3. Run:
 
 ```bash
-docker build -t face_recognition_examples .
 host +local:root
 docker run \
   --rm \
@@ -25,6 +24,6 @@ docker run \
   -e QT_X11_NO_MITSHM=1 \
   -e DISPLAY \
   --device=/dev/video0:/dev/video0 \
-  face_recognition_examples \
+  bryant1410/face_recognition \
     python3 facerec_from_webcam_faster.py
 ```
